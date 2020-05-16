@@ -1,0 +1,11 @@
+<h1>Chat app 2nd</h1>
+<ul id="chat-index">
+  <% @rooms.each do |message| %>
+  <li><%= message.text %></li>
+  <% end %>
+</ul>
+
+<%# 入力フォームで送信したデータをDBに保存 %>
+<%= form_tag("/create", method: :post) do %>
+  <input type="text" id="chat-form" data-dehavior="chat_post" name="message">
+<% end %>
